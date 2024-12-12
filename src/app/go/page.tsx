@@ -32,11 +32,21 @@ const ExternalApiButtonPage = () => {
     };
 
     return (
-        <div style={{ textAlign: 'center', marginTop: '50px' }}>
+        <div style={{textAlign: 'center', marginTop: '50px'}}>
             <h1>Call External API</h1>
             <button onClick={handleApiCall} disabled={loading}>
                 {loading ? 'Loading...' : 'Call API'}
             </button>
+            <br/>
+
+            <a
+                href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=027b19394251ac595b2ecc4bf27a3553&redirect_uri=http://43.200.194.49:8080/login/oauth2/code/kakao"
+                // target="_blank"
+                rel="noreferrer"
+            >
+                카카오로 시작하기
+            </a>
+            <br/>
             {response && (
                 <pre
                     style={{
