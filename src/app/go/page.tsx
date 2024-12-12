@@ -25,7 +25,7 @@ const ExternalApiButtonPage = () => {
             const data = await res.json();
             setResponse(JSON.stringify(data, null, 2)); // Format JSON response for display
         } catch (error) {
-            setResponse(error.message);
+            // setResponse(error.message);
         } finally {
             setLoading(false);
         }
