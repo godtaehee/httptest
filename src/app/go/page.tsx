@@ -26,6 +26,7 @@ const ExternalApiButtonPage = () => {
             console.log(data,'datadatadata')
             setResponse(JSON.stringify(data, null, 2)); // Format JSON response for display
         } catch (error) {
+            console.log(error)
             // setResponse(error.message);
         } finally {
             setLoading(false);
@@ -50,6 +51,7 @@ const ExternalApiButtonPage = () => {
             console.log(data,'datadatadata')
             setResponse(JSON.stringify(data, null, 2)); // Format JSON response for display
         } catch (error) {
+            console.log(error)
             // setResponse(error.message);
         } finally {
             setLoading(false);
@@ -74,6 +76,7 @@ const ExternalApiButtonPage = () => {
             console.log(data,'datadatadata')
             setResponse(JSON.stringify(data, null, 2)); // Format JSON response for display
         } catch (error) {
+            console.log(error)
             // setResponse(error.message);
         } finally {
             setLoading(false);
