@@ -9,7 +9,7 @@ const ExternalApiButtonPage = () => {
     const handleApiCall = async () => {
         setLoading(true);
         try {
-            const res = await fetch('http://43.200.194.49:8080/login.html', {
+            const res = await fetch('http://localhost:8080/', {
                 method: 'GET', // Change to POST, PUT, etc. if needed
                 headers: {
                     'Content-Type': 'application/json',
@@ -23,6 +23,7 @@ const ExternalApiButtonPage = () => {
             }
 
             const data = await res.json();
+            console.log(data,'datadatadata')
             setResponse(JSON.stringify(data, null, 2)); // Format JSON response for display
         } catch (error) {
             // setResponse(error.message);
@@ -40,7 +41,8 @@ const ExternalApiButtonPage = () => {
             <br/>
 
             <a
-                href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=027b19394251ac595b2ecc4bf27a3553&redirect_uri=http://43.200.194.49:8080/login/oauth2/code/kakao"
+                href="https://kauth.kakao.com/oauth/authorize?response_type=code&state=gd&client_id=027b19394251ac595b2ecc4bf27a3553&redirect_uri=http://localhost:8080/login/oauth2/code/kakao"
+                // href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=027b19394251ac595b2ecc4bf27a3553&redirect_uri=http://43.200.194.49:8080/login/oauth2/code/kakao"
                 // target="_blank"
                 rel="noreferrer"
             >
