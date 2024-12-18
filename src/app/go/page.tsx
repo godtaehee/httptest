@@ -30,13 +30,65 @@ const ExternalApiButtonPage = () => {
         } finally {
             setLoading(false);
         }
+    };const handleApiCall1 = async () => {
+        setLoading(true);
+        try {
+            const res = await fetch('http://127.0.0.1:8080/', {
+                method: 'GET', // Change to POST, PUT, etc. if needed
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            console.log(res)
+
+            if (!res.ok) {
+                throw new Error(`Error: ${res.status}`);
+            }
+
+            const data = await res.json();
+            console.log(data,'datadatadata')
+            setResponse(JSON.stringify(data, null, 2)); // Format JSON response for display
+        } catch (error) {
+            // setResponse(error.message);
+        } finally {
+            setLoading(false);
+        }
+    };const handleApiCall2 = async () => {
+        setLoading(true);
+        try {
+            const res = await fetch('http://43.202.55.110/:8080/', {
+                method: 'GET', // Change to POST, PUT, etc. if needed
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            console.log(res)
+
+            if (!res.ok) {
+                throw new Error(`Error: ${res.status}`);
+            }
+
+            const data = await res.json();
+            console.log(data,'datadatadata')
+            setResponse(JSON.stringify(data, null, 2)); // Format JSON response for display
+        } catch (error) {
+            // setResponse(error.message);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
         <div style={{textAlign: 'center', marginTop: '50px'}}>
             <h1>Call External API</h1>
             <button onClick={handleApiCall} disabled={loading}>
-                {loading ? 'Loading...' : 'Call API'}
+                {loading ? 'Loading...' : 'localhost'}
+            </button><button onClick={handleApiCall1} disabled={loading}>
+                {loading ? 'Loading...' : '127'}
+            </button><button onClick={handleApiCall2} disabled={loading}>
+                {loading ? 'Loading...' : 'publicIp'}
             </button>
             <br/>
 
