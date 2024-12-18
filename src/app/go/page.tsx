@@ -57,7 +57,7 @@ const ExternalApiButtonPage = () => {
     };const handleApiCall2 = async () => {
         setLoading(true);
         try {
-            const res = await fetch('http://43.202.55.110/:8080/', {
+            const res = await fetch('http://43.202.55.110:8080/', {
                 method: 'GET', // Change to POST, PUT, etc. if needed
                 headers: {
                     'Content-Type': 'application/json',
